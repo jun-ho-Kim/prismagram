@@ -5,7 +5,7 @@ type User {
   firstName: String @default(value:"")
   lastName: String
   bio: String
-  follows: [User!] @relation(name:"FollowRelation")
+  following: [User!] @relation(name:"FollowRelation")
   followers: [User!] @relation(name: "FollowRelation")
   post: [Post!]!
   likes: [Like!]!

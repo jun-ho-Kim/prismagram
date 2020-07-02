@@ -11,5 +11,10 @@ export default {
             const posts = await prisma.user({id:user.id}).post();
             return {user: userProfile, posts};
         }
+    },
+    User : {
+        fullName: parent => {
+        return `${parent.firstName} ${parent.lastName}`;
+        }
     }
 }

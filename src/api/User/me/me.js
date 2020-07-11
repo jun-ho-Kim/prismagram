@@ -7,9 +7,10 @@ export default {
             isAuthenticated(request);
             /* fragment를 사용했을 경우의 코드(주석처리된 부분만 이용)
             return prisma.user({i:user.id}).$fragment(USER_FRAGMENT); */
-            const userProfile = prisma.user({id:user.id});
-            const posts = await prisma.user({id:user.id}).post();
-            return {user: userProfile, posts};
+            return prisma.user({id:user.id});
+            // const userProfile = prisma.user({id:user.id});
+            // const posts = await prisma.user({id:user.id}).post();
+            // return {user: userProfile};
         }
     }
 };
